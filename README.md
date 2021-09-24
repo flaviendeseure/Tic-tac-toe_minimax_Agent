@@ -1,6 +1,6 @@
 [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ZUXPiV1-kVUIWXV1NPzytN4CJtumsSHE?usp=sharing)
 
-# 12x12_Tic-tac-toe_Alpha-Beta-pruning_Agent
+# Tic tac toe minimax Agent
 ## Overview
 
 ## Requirements
