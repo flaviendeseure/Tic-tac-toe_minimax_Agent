@@ -104,23 +104,22 @@ class Board:
     Sets the coordinates of a new grid that will be used by the minimax algorithm.
     The objective is to reduce the tree search by width.
     In fact, we made the hypothesis that a player has no interest to place a marker
-    at more than 3/4 cases from the cases already placed.
+    at more than 3 cases from the cases already placed.
 
     Parameters
     ----------
     case_number : int
-        Length of  of additional cells to be added around  to narrow the basic grid
-
+        Size of the grid surrounding the markers already played on the board
     Returns
     -------
     min_column : int
-        représente le minimum de la colonne de tous les jetons 
+        lower right column number of the new grid 
     min_raw : int 
-        représente le minimum de la ligne de tous les jetons
+        lower right raw number of the new grid
     max_column : int 
-        représente le maximum de la colonne de tous les jetons
+        upper left column number of the new grid 
     max_raw : int 
-        represent the max number  le maximum de la ligne de tous les jetons
+        upper left raw number of the new grid
     """
     min_column=100
     min_raw=100
