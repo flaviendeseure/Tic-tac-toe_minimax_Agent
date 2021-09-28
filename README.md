@@ -7,18 +7,7 @@
 ## Overview
 The objective of this project was to develop a tic-tac-toe 4 agent with some contraints explained below:
 
-<details open="open">
-  <summary>Implementation</summary>
-  <ol>
-    </li>
-    <li><p>Game rule</p></li>
-    <li><p>Model constraints</p></li>
-    <li><p>Search space definition </p></li>
-    <li><p>Our model implementation</p></li>
-
-  </ol>
-</details>
-1. Game rule  
+**1. Game rule**
     Tic-Tac-Toe 4 is a combinatorial variation on the classic Tic-tac-toe game. It is a turn-based game for two players.   
     Each player is represented with a markers: X for the first one and O for the second one.  
       
@@ -26,16 +15,18 @@ The objective of this project was to develop a tic-tac-toe 4 agent with some con
       
     The winner is the player who first aligns (horizontally, vertically or diagonally) at least four of his pieces in a row. When all the squares of the game grid are filled, if neither player has made such an alignment, the game is declared a draw.   
  
-2. Model constraints
+**2. Model constraints**
     - The model should be based on a Minimax algorithm with ideally an Alpha-Beta pruning
     - It is forbidden to use dictionaries of moves. All decisions must be calculated in real time
 
-3. Search space definition 
+**3. Search space definition**
     I started by determining our search space to have an idea of the number of operations to perform:
     - There is 144 cases in the grid  
     - At the nth round, there is $(244-(n-1))!$ possibilities
 
-4. Our model implementation
+<details open="open">
+  <summary>4. Our Implementation</summary>
+  <p>
     The main challenge here is not the game complexity but the extremely large search space. In order to decrease the number of nodes that are evaluated by our model I use these variants:
     - Methods for search tree length reduction:
         - alpha-beta pruning
@@ -60,7 +51,10 @@ The objective of this project was to develop a tic-tac-toe 4 agent with some con
             - -1: if the opponent has 1 markers in a row,
             - -10: if the opponent has 2 markers in a row,
             - -800: if the opponent has 3 markers in a row,
-            - -7000: if the opponent has 4 markers in a row,
+            - -7000: if the opponent has 4 markers in a row,    
+  </p>
+</details>
+
 
 > *“Give me six hours to chop down a tree and I will spend the first four sharpening the axe.”* - Abraham Lincoln
 
