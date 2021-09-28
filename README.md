@@ -35,24 +35,38 @@ The objective of this project was to develop a tic-tac-toe 4 agent with some con
     </ul>
     <li>Method for search tree width reduction:</li>
     <ul>
-       <li>Reduce the board size when it's possible in a sub-board</li>
+       <li>Reduce the board size when it's possible in a sub-board.</li>
     </ul>
-    <li>Heuristic method that looks at each group of adjacent marker locations in a (horizontal, vertical, or diagonal) line and assigns</li>
-    <ol>
+    <li>Heuristic method that looks at each group of adjacent marker locations in a (horizontal, vertical, or diagonal) line and assigns.</li>
+    <p>We choose a defensive strategy.</p>
+    <ul>
        <li>For diagonal alignments</li>
        <ul>
            <li>100000: if the agent has 4 markers in a row (the agent won),</li>
+           <li>500: if the agent has 3 markers in a row,</li>
+           <li>120: if the agent has 2 markers in a row,</li>
+           <li>10: if the agent has 1 markers in a row,</li>
+           <li>-2: if the opponent has 1 markers in a row,</li>
+           <li>-20: if the opponent has 2 markers in a row,</li>
+           <li>-2000: if the opponent has 3 markers in a row,</li>
+           <li>-15000: if the opponent has 4 markers in a row,</li>
        </ul>
        <li>For non-diagonal alignments</li>
        <ul>
-           <li>Reduce the board size when it's possible in a sub-board</li>
+           <li>100000: if the agent has 4 markers in a row (the agent won),</li>
+           <li>250: if the agent has 3 markers in a row,</li>
+           <li>60: if the agent has 2 markers in a row,</li>
+           <li>5: if the agent has 1 markers in a row,</li>
+           <li>-1: if the opponent has 1 markers in a row,</li>
+           <li>-10: if the opponent has 2 markers in a row,</li>
+           <li>-800: if the opponent has 3 markers in a row,</li>
+           <li>-7000: if the opponent has 4 markers in a row,</li>
        </ul>
-    </ol>
+    </ul>
   </ol>
     
   </p>
-</details>
-
+</details>   
 
 > *“Give me six hours to chop down a tree and I will spend the first four sharpening the axe.”* - Abraham Lincoln
 
