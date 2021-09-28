@@ -7,7 +7,7 @@
 ## Overview
 The objective of this project was to develop a tic-tac-toe 4 agent with some contraints explained below:
 
-**1. Game rule**
+1. **Game rule**
     Tic-Tac-Toe 4 is a combinatorial variation on the classic Tic-tac-toe game. It is a turn-based game for two players.   
     Each player is represented with a markers: X for the first one and O for the second one.  
       
