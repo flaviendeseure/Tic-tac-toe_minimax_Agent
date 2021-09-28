@@ -1,11 +1,12 @@
 [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ZUXPiV1-kVUIWXV1NPzytN4CJtumsSHE?usp=sharing)
 
 <p align="center">
-    <h3 align="center">Tic tac toe minimax Agent</h3>
+    <h1 align="center">Tic tac toe minimax Agent</h3>
 </p>
 
 ## Overview
-# Tic-Tac-Toe 4 (12x12 grid)
+The objective of this project was to develop a tic-tac-toe 4 agent 
+
 1. Game rule  
     Tic-Tac-Toe 4 is a combinatorial variation on the classic Tic-tac-toe game. It is a turn-based game for two players.   
     Each player is represented with a markers: X for the first one and O for the second one.  
@@ -19,13 +20,37 @@
     - It is forbidden to use dictionaries of moves. All decisions must be calculated in real time
 
 3. Search space definition 
-    We started by determining our search space to have an idea of the number of operations to perform:
+    I started by determining our search space to have an idea of the number of operations to perform:
     - There is 144 cases in the grid  
     - At the nth round, there is $(244-(n-1))!$ possibilities
+
 4. Our model implementation
-    The main challenge here is not the game complexity but the extremely large search space. In order to decrease the number of nodes that are evaluated by our model we use these variants:
-    - We implement alpha-beta pruning
-    - 
+    The main challenge here is not the game complexity but the extremely large search space. In order to decrease the number of nodes that are evaluated by our model I use these variants:
+    - Methods for search tree length reduction:
+        - alpha-beta pruning
+        - maximum depth limitation
+    - Method for search tree width reduction:
+        - Reduce the board size when it's possible in a sub-board
+    - I add an heuristic that looks at each group of adjacent marker locations in a (horizontal, vertical, or diagonal) line and assigns:
+        - For diagonal alignment
+            - 100000: if the agent has 4 markers in a row (the agent won),
+            - 500: if the agent has 3 markers in a row,
+            - 120: if the agent has 2 markers in a row,
+            - 10: if the agent has 1 markers in a row,
+            - -2: if the opponent has 1 markers in a row,
+            - -20: if the opponent has 2 markers in a row,
+            - -2000: if the opponent has 3 markers in a row,
+            - -15000: if the opponent has 4 markers in a row,
+        - For non-diagonal alignment
+            - 100000: if the agent has 4 markers in a row (the agent won),
+            - 250: if the agent has 3 markers in a row,
+            - 60: if the agent has 2 markers in a row,
+            - 5: if the agent has 1 markers in a row,
+            - -1: if the opponent has 1 markers in a row,
+            - -10: if the opponent has 2 markers in a row,
+            - -800: if the opponent has 3 markers in a row,
+            - -7000: if the opponent has 4 markers in a row,
+
 > *“Give me six hours to chop down a tree and I will spend the first four sharpening the axe.”* - Abraham Lincoln
 
 ## Requirements
@@ -37,9 +62,22 @@ pip install -r requirements.txt
 ```
 
 ## Getting started
-
+There are two ways to use this project:
+#### Google colab 
+Simply use the link located at the top of this page  
+#### Locally, on your computer  
+1. Clone this repository  
+2. Install the associate libraries (see requirements)
+3. Two options:
+    1. Open the notebook
+    2. Launch the python program on your command prompt
+    ```
+    python path/to/cloned/repository/Tic-Tac-Toe_4.py
+    ```
 
 ## Authors
+Flavien DESEURE--CHARRON - flavien.deseure@gmail.com - [![Linkedin](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/flavien-deseure--charron/)
+
 
 ## References
 [1] Ansaf Salleb-Aouissi. Week 4: Adversarial search, games [MOOC lecture]. In Ansaf Salleb-Aouissi, Artificial Intelligence (AI). edX. (https://www.edx.org/course/artificial-intelligence-ai)[https://www.edx.org/course/artificial-intelligence-ai]
