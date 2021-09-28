@@ -1,12 +1,7 @@
 [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ZUXPiV1-kVUIWXV1NPzytN4CJtumsSHE?usp=sharing)
 
 <p align="center">
-    <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-    </a>
-
     <h3 align="center">Tic tac toe minimax Agent</h3>
-
 </p>
 
 ## Overview
