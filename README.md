@@ -7,7 +7,7 @@
 ## Overview
 The objective of this project was to develop a tic-tac-toe 4 agent with some contraints explained below:
 
-1. **Game rule**
+1. **Game rule**  
     Tic-Tac-Toe 4 is a combinatorial variation on the classic Tic-tac-toe game. It is a turn-based game for two players.   
     Each player is represented with a markers: X for the first one and O for the second one.  
       
@@ -15,43 +15,41 @@ The objective of this project was to develop a tic-tac-toe 4 agent with some con
       
     The winner is the player who first aligns (horizontally, vertically or diagonally) at least four of his pieces in a row. When all the squares of the game grid are filled, if neither player has made such an alignment, the game is declared a draw.   
  
-**2. Model constraints**
+2. **Model constraints**  
     - The model should be based on a Minimax algorithm with ideally an Alpha-Beta pruning
     - It is forbidden to use dictionaries of moves. All decisions must be calculated in real time
 
-**3. Search space definition**
+3. **Search space definition**  
     I started by determining our search space to have an idea of the number of operations to perform:
     - There is 144 cases in the grid  
-    - At the nth round, there is $(244-(n-1))!$ possibilities
+    - At the nth round, there is (244-(n-1))! possibilities
 
 <details open="open">
   <summary>4. Our Implementation</summary>
-  <p>
-    The main challenge here is not the game complexity but the extremely large search space. In order to decrease the number of nodes that are evaluated by our model I use these variants:
-    - Methods for search tree length reduction:
-        - alpha-beta pruning
-        - maximum depth limitation
-    - Method for search tree width reduction:
-        - Reduce the board size when it's possible in a sub-board
-    - I add an heuristic that looks at each group of adjacent marker locations in a (horizontal, vertical, or diagonal) line and assigns:
-        - For diagonal alignment
-            - 100000: if the agent has 4 markers in a row (the agent won),
-            - 500: if the agent has 3 markers in a row,
-            - 120: if the agent has 2 markers in a row,
-            - 10: if the agent has 1 markers in a row,
-            - -2: if the opponent has 1 markers in a row,
-            - -20: if the opponent has 2 markers in a row,
-            - -2000: if the opponent has 3 markers in a row,
-            - -15000: if the opponent has 4 markers in a row,
-        - For non-diagonal alignment
-            - 100000: if the agent has 4 markers in a row (the agent won),
-            - 250: if the agent has 3 markers in a row,
-            - 60: if the agent has 2 markers in a row,
-            - 5: if the agent has 1 markers in a row,
-            - -1: if the opponent has 1 markers in a row,
-            - -10: if the opponent has 2 markers in a row,
-            - -800: if the opponent has 3 markers in a row,
-            - -7000: if the opponent has 4 markers in a row,    
+  <p>The main challenge here is not the game complexity but the extremely large search space. In order to decrease the number of nodes that are evaluated by our model I use these variants:</p>
+  <ol>
+    <li>Methods for search tree length reduction:</li>
+    <ul>
+       <li>Alpha-beta pruning</li>
+       <li>Maximum depth limitation</li>
+    </ul>
+    <li>Method for search tree width reduction:</li>
+    <ul>
+       <li>Reduce the board size when it's possible in a sub-board</li>
+    </ul>
+    <li>Heuristic method that looks at each group of adjacent marker locations in a (horizontal, vertical, or diagonal) line and assigns</li>
+    <ol>
+       <li>For diagonal alignments</li>
+       <ul>
+           <li>100000: if the agent has 4 markers in a row (the agent won),</li>
+       </ul>
+       <li>For non-diagonal alignments</li>
+       <ul>
+           <li>Reduce the board size when it's possible in a sub-board</li>
+       </ul>
+    </ol>
+  </ol>
+    
   </p>
 </details>
 
