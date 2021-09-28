@@ -5,8 +5,19 @@
 </p>
 
 ## Overview
-The objective of this project was to develop a tic-tac-toe 4 agent 
+The objective of this project was to develop a tic-tac-toe 4 agent with some contraints explained below:
 
+<details open="open">
+  <summary>Implementation</summary>
+  <ol>
+    </li>
+    <li><p>Game rule</p></li>
+    <li><p>Model constraints</p></li>
+    <li><p>Search space definition </p></li>
+    <li><p>Our model implementation</p></li>
+
+  </ol>
+</details>
 1. Game rule  
     Tic-Tac-Toe 4 is a combinatorial variation on the classic Tic-tac-toe game. It is a turn-based game for two players.   
     Each player is represented with a markers: X for the first one and O for the second one.  
@@ -14,7 +25,7 @@ The objective of this project was to develop a tic-tac-toe 4 agent
     The goal of the game is to align a sequence of 4 pieces on a grid with 12 columns and 12 rows.  
       
     The winner is the player who first aligns (horizontally, vertically or diagonally) at least four of his pieces in a row. When all the squares of the game grid are filled, if neither player has made such an alignment, the game is declared a draw.   
-       
+ 
 2. Model constraints
     - The model should be based on a Minimax algorithm with ideally an Alpha-Beta pruning
     - It is forbidden to use dictionaries of moves. All decisions must be calculated in real time
